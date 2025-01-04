@@ -10,4 +10,4 @@ if [ -z "$VAULT_ADDR" ]; then
     exit 2
 fi 
 
-vault login -tls-skip-verify $VAULT_TOKEN
+vault login -tls-skip-verify true &> /dev/null 
