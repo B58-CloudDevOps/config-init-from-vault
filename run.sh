@@ -10,14 +10,14 @@ if [ -z "$VAULT_ADDR" ]; then
     exit 2
 fi 
 
-if [ -z "$ENVIRONMENT" ]; then 
-    echo ENVIRONMENT variable is missing
-    exit 3
-fi 
-
 if [ -z "$APP_NAME" ]; then 
     echo VAULT_ADDR variable is missing
     exit 4
+fi 
+
+if [ -z "$ENVIRONMENT" ]; then 
+    echo ENVIRONMENT variable is missing
+    exit 3
 fi 
 
 vault login -tls-skip-verify true &> /dev/null                             # This ensure you pod is streaming the logs and the container will wait reading the logs and given us an opportunity to enter in to the pod
