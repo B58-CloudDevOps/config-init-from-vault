@@ -10,8 +10,8 @@ if [ -z "$VAULT_ADDR" ]; then
     exit 2
 fi 
 
-if [ -z "$ENV" ]; then 
-    echo ENV variable is missing
+if [ -z "$ENVIRONMENT" ]; then 
+    echo ENVIRONMENT variable is missing
     exit 3
 fi 
 
