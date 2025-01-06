@@ -8,10 +8,10 @@ fi
 if [ -z "$VAULT_ADDR" ]; then 
     echo VAULT_ADDR variable is missing
     exit 2
-fi 
+fi
 
 if [ -z "$APP_NAME" ]; then 
-    echo VAULT_ADDR variable is missing
+    echo APP_NAME variable is missing
     exit 4
 fi 
 
