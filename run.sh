@@ -27,4 +27,4 @@ vault kv get roboshop-${ENVIRONMENT}/${APP_NAME} | sed -n '/Data/, $ p'| sed -e 
 kubectl delete secret ${APP_NAME} || true
 kubectl create secret generic ${APP_NAME} --from-env-file=/data/secrets
 
-tail -f /dev/null   
+# tail -f /dev/null    # Enable this only for troubleshooting
