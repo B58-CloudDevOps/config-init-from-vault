@@ -25,6 +25,6 @@ vault login -tls-skip-verify true &> /dev/null                             # Thi
 mkdir /data/ && touch /data/secrets
 vault kv get roboshop-${ENVIRONMENT}/${APP_NAME} | sed -n '/Data/, $ p'| sed -e '1,3 d' | awk '{print $1"="$2}'  > /data/secrets
 kubectl delete secret ${APP_NAME} || true
-kubectl create secret generic ${APP_NAME} --from-file=/data/secrets
+kubectl create secret generic ${APP_NAME} --from-env-file=/data/secrets
 
 tail -f /dev/null   
