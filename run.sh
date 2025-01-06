@@ -22,6 +22,6 @@ fi
 
 vault login -tls-skip-verify true &> /dev/null                             # This ensure you pod is streaming the logs and the container will wait reading the logs and given us an opportunity to enter in to the pod
 
-vault kv get roboshop-${ENV}/${APP_NAME} | sed -n '/Data/, $ p'| sed -e '1,3 d' | awk '{print  "export "$1"="$2""}'  > /data/secrets
+vault kv get roboshop-${ENVIRONMENT}/${APP_NAME} | sed -n '/Data/, $ p'| sed -e '1,3 d' | awk '{print  "export "$1"="$2""}'  > /data/secrets
 
 tail -f /dev/null   
